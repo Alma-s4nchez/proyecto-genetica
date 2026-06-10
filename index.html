@@ -271,11 +271,23 @@
             font-size: 1.2rem;
         }
 
-        .video-card video {
-            width: 100%;
+        /* Estilos modificados para los IFRAMES de YouTube */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
             border-radius: 20px;
-            outline: none;
-            background: #000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         /* SECCIÓN CUESTIONARIO / INTERACTIVO */
@@ -354,13 +366,11 @@
 </head>
 <body>
 
-    <!-- 1. ENCABEZADO (HERO) -->
     <header class="hero">
         <div class="hero-content">
             <span class="badge">🧬 Investigación Bioética 2026</span>
             <h1>Edición genética aplicada a embriones humanos:<br><span style="color:var(--pink-dark)">beneficios, riesgos y desafíos éticos</span></h1>
             
-            <!-- Botonera interactiva -->
             <div class="nav-buttons-container">
                 <a href="#introduccion" class="btn">🎈 Inicio</a>
                 <a href="#tecnologias" class="btn">🔬 Tecnologías</a>
@@ -373,17 +383,14 @@
         </div>
     </header>
 
-    <!-- INTRODUCCIÓN -->
     <section id="introduccion" class="section-container">
         <div class="balloon-card intro-text">
             <p>La edición genética aplicada a embriones humanos consiste en modificar el ADN de un embrión antes de su desarrollo completo. Su principal objetivo es prevenir enfermedades hereditarias causadas por mutaciones genéticas. Aunque esta tecnología ofrece importantes avances para la medicina, también genera debates éticos, legales y de seguridad debido a que los cambios realizados podrían transmitirse a futuras generaciones.</p>
             
-            <!-- FOTO ENLAZADA: CADENA -->
             <img src="img/cadena.png" alt="Cadena de ADN" class="pop-img" style="max-width: 250px; margin-left: auto; margin-right: auto;">
         </div>
     </section>
 
-    <!-- 2. TECNOLOGÍAS -->
     <section id="tecnologias" class="section-container">
         <div class="section-title">
             <h2>Tecnologías de Edición</h2>
@@ -394,7 +401,6 @@
                     <h3>CRISPR-Cas9</h3>
                     <p>Es la herramienta más utilizada actualmente para editar genes. Funciona como unas “tijeras moleculares” capaces de localizar una secuencia específica de ADN y modificarla con gran precisión.</p>
                 </div>
-                <!-- FOTO ENLAZADA: CRISPR -->
                 <img src="img/crispr.png" alt="Gráfico CRISPR" class="tech-img">
             </div>
             <div class="tech-card">
@@ -402,7 +408,6 @@
                     <h3>Edición de bases</h3>
                     <p>Permite cambiar una sola letra del ADN sin cortar completamente la cadena genética, reduciendo algunos riesgos asociados a la edición tradicional.</p>
                 </div>
-                <!-- FOTO ENLAZADA: BASE -->
                 <img src="img/base.jpg" alt="Cambio de Base" class="tech-img">
             </div>
             <div class="tech-card">
@@ -410,7 +415,6 @@
                     <h3>Prime Editing</h3>
                     <p>Es una versión más avanzada de la edición genética que permite corregir mutaciones de forma más precisa y flexible.</p>
                 </div>
-                <!-- FOTO ENLAZADA: CORRECCION -->
                 <img src="img/correccion.jpeg" alt="Corrección Precisa" class="tech-img">
             </div>
             <div class="tech-card">
@@ -418,19 +422,16 @@
                     <h3>Secuenciación</h3>
                     <p>Permite analizar el ADN de los embriones para identificar genes defectuosos o mutaciones antes de realizar cualquier modificación.</p>
                 </div>
-                <!-- FOTO ENLAZADA: ANALISIS -->
                 <img src="img/analisis.jpg" alt="Análisis de ADN" class="tech-img">
             </div>
         </div>
     </section>
 
-    <!-- 3. DILEMAS ÉTICOS Y LEGALES -->
     <section id="dilemas" class="section-container">
         <div class="section-title">
-            <h2>Dilemas Étipos y Legales</h2>
+            <h2>Dilemas Éticos y Legales</h2>
         </div>
         <div class="columns-2">
-            <!-- Columna Ética -->
             <div class="balloon-card">
                 <h3 class="col-title">💭 Dilemas Éticos</h3>
                 <div class="sub-item">
@@ -445,11 +446,9 @@
                 <div class="sub-item">
                     <strong>Valor de la diversidad:</strong> Algunas personas consideran que eliminar ciertas características genéticas podría reducir la diversidad biológica de la humanidad.
                 </div>
-                <!-- FOTO ENLAZADA: DILEMA -->
                 <img src="img/dilema.jpg" alt="Dilemas Éticos" class="pop-img">
             </div>
 
-            <!-- Columna Legal -->
             <div class="balloon-card" style="display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                     <h3 class="col-title">⚖️ Aspectos Legales</h3>
@@ -463,13 +462,11 @@
                         • Organismos científicos internacionales solicitan de manera urgente normas estrictas para controlar su uso de forma global.
                     </div>
                 </div>
-                <!-- FOTO ENLAZADA: LEYES -->
                 <img src="img/leyes.jpg" alt="Leyes Globales" class="pop-img">
             </div>
         </div>
     </section>
 
-    <!-- 4. PELIGROS ACTUALES Y POTENCIALES -->
     <section id="peligros" class="section-container">
         <div class="section-title">
             <h2>Peligros y Riesgos Potenciales</h2>
@@ -482,12 +479,10 @@
                 <li><strong>Impacto hereditario:</strong> Los errores podrían transmitirse a futuras generaciones y permanecer durante décadas o siglos.</li>
                 <li><strong>Uso indebido:</strong> La tecnología podría emplearse para mejorar características humanas en lugar de tratar enfermedades.</li>
             </ul>
-            <!-- FOTO ENLAZADA: RIESGOS -->
             <img src="img/riesgos.jpg" alt="Riesgos Médicos" class="pop-img" style="max-width: 250px; margin-left: auto; margin-right: auto;">
         </div>
     </section>
 
-    <!-- 5. MANERAS DE MITIGAR LOS RIESGOS -->
     <section id="mitigacion" class="section-container">
         <div class="section-title">
             <h2>Estrategias de Mitigación</h2>
@@ -503,26 +498,26 @@
         </div>
     </section>
 
-    <!-- 6. GALERÍA DE MULTIMEDIA (VIDEOS REALES) -->
     <section id="videos" class="section-container">
         <div class="section-title">
             <h2>Material Audiovisual</h2>
         </div>
         <div class="video-grid">
-            <!-- VIDEO 1 -->
             <div class="video-card">
                 <h3>Edición Genética - Introducción</h3>
-                <video src="img/video1.mp4" controls></video>    
-                </div>
-            <!-- VIDEO 2 -->
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/OTvb3GxhBzc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>   
+            </div>
             <div class="video-card">
                 <h3>Mecanismos de Modificación</h3>
-                <video src="img/video 2.mp4" controls></video>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/UeDhotT7uZs" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CUESTIONARIO INTERACTIVO -->
     <section id="cuestionario" class="section-container">
         <div class="section-title">
             <h2>Ponte a Prueba</h2>
@@ -538,12 +533,10 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <p>© 2026 - Proyecto Escolar de Concientización Bioética. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- LÓGICA DEL CUESTIONARIO -->
     <script>
         const quizData = [
             {
